@@ -1,0 +1,20 @@
+﻿@model Employee
+
+<form asp-action="SaveEmployee" method="post">
+
+    <label asp-for="FirstName"></label>
+    <input type="text" asp-for="FirstName" value="@Model.FirstName" />
+
+    <label asp-for="LastName"></label>
+    <input type="text" asp-for="LastName" value="@Model.LastName" />
+
+    <label asp-for="FirstName"></label>
+    <input type="text" asp-for="FirstName" value="@Model.FirstName" />
+
+    @if (Model.EmployeeId != 0)
+    {
+        <input type="hidden" value="@Model.EmployeeId" />
+    }
+
+    <input type="submit" class="btn btn-light" value="Save Employee" />
+</form>

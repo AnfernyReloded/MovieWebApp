@@ -1,0 +1,42 @@
+﻿@model List<Employee>
+
+<table>
+    <tr>
+        <th>
+            FirstName
+        </th>
+        <th>
+            LastName
+        </th>
+        @*<th>
+            BirthDate
+        </th>
+        <th>
+            HireDate
+        </th>
+        <th>
+            HomePhone
+        </th>*@
+
+    </tr>
+
+    @foreach (var Employee in Model)
+    {
+        <tr>
+            <td>@Employee.FirstName</td>
+            <td>@Employee.LastName</td>
+            <td>@Employee.BirthDate</td>
+            <td><a href="Northwind/DeleteEmployee?id=@Employee.EmployeeId" class="btn btn-danger">Delete @Employee.FirstName</a></td>
+            <td><a href="Northwind/Edit?id=@Employee.EmployeeId" class="btn btn-warning">Edit @Employee.FirstName</a></td>
+
+        </tr>
+    }
+
+
+
+</table>
+
+<a href ="Northwind/EmployeeForm" class="btn btn-dark">Add Employee</a>
+
+@*<a href="Northwind/" class="btn btn-dark">Add Employee</a>
+<button class = "btn btn-dark" @Html.ActionLink("Northwind", "EmployeeForm") >Add Employee</button>*@
